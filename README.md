@@ -16,9 +16,9 @@
 - NPM
 - Jest
 
-<!--## Live version
+## Live version
 
-You can check the live version in [this link](https://sleepy-jepsen-2ce943.netlify.app/)-->
+You can check the live version in [this link](https://gscarv-react-calculator.herokuapp.com/)
 
 ## Getting Started
 
