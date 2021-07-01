@@ -1,7 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function Button() {
-  return <button type="button"> Placeholder </button>;
+function Button(props) {
+  const { name } = props;
+  return (
+    <button type="button">
+      { name }
+    </button>
+  );
 }
+
+Button.defaultProps = {
+  name: 'button',
+};
+
+Button.propTypes = {
+  name: PropTypes.string,
+};
 
 export default Button;
