@@ -6,8 +6,10 @@ function App() {
   return (
     <div>
       <p>Calculator</p>
-      <Display />
-      <ButtonPanel />
+      <>
+        <Display />
+        <ButtonPanel />
+      </>
     </div>
   );
 }
