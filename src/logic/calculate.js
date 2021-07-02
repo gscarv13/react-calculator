@@ -7,8 +7,11 @@ export default function calculate(dataObj, btnName) {
       operation = btnName;
       break;
     case '+/-':
-      total *= -1;
-      next *= -1;
+      if (next === null) {
+        total *= -1;
+      } else {
+        next *= -1;
+      }
       break;
     case '%':
       next = (next / 100) * total;
