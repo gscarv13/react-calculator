@@ -2,11 +2,8 @@ import Big from 'big.js';
 
 export default function operate(numberOne, numberTwo, operation) {
   let result = Big(0);
-  let x = null;
-  let y = null;
-
-  x = numberOne !== null ? Big(numberOne) : Big(0);
-  y = numberTwo !== null ? Big(numberTwo) : Big(0);
+  const x = numberOne !== null ? Big(numberOne) : Big(0);
+  const y = numberTwo !== null ? Big(numberTwo) : Big(0);
 
   switch (operation) {
     case '-':
