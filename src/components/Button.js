@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Button(props) {
-  const { name } = props;
+  const { name, clickHandler } = props;
   return (
-    <button type="button">
+    <button type="button" onClick={() => clickHandler(name)}>
       { name }
     </button>
   );
@@ -12,6 +12,7 @@ function Button(props) {
 
 Button.propTypes = {
   name: PropTypes.string.isRequired,
+  clickHandler: PropTypes.func.isRequired,
 };
 
 export default Button;

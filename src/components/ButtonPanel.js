@@ -1,5 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from './Button';
 
 const GroupButtons = [
@@ -10,20 +11,24 @@ const GroupButtons = [
   ['0', '.', '='],
 ];
 
-function displayButtons(buttons) {
+function displayButtons(buttons, handler) {
   return buttons.map((group, groupID) => (
     <div key={`group${groupID}`}>
-      { group.map((btn, btnID) => <Button key={`btn${btnID}`} name={btn} />) }
+      { group.map((btn, btnID) => <Button key={`btn${btnID}`} name={btn} clickHandler={handler} />) }
     </div>
   ));
 }
 
-function ButtonPanel() {
+function ButtonPanel(props) {
+  const { clickHandler } = props;
   return (
     <>
-      { displayButtons(GroupButtons) }
+      { displayButtons(GroupButtons, clickHandler) }
     </>
   );
 }
 
+ButtonPanel.propTypes = {
+  clickHandler: PropTypes.func.isRequired,
+};
 export default ButtonPanel;
