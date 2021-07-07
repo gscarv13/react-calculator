@@ -16,10 +16,19 @@ export default function operate(numberOne, numberTwo, operation) {
       result = x.times(y);
       break;
     case '÷':
-      result = x.div(y);
+      if (y.valueOf() === '0') {
+        result = 'Error';
+      } else {
+        result = x.div(y);
+      }
+
       break;
     case '%':
-      result = (y.div(100)).times(x);
+      if (y.valueOf() === '0') {
+        result = x.div(100);
+      } else {
+        result = (y.div(100)).times(x);
+      }
       break;
     default:
       throw new Error('invalid operator');

@@ -5,8 +5,7 @@ function Display(props) {
   const { result } = props;
   return (
     <div>
-      Result is
-      { ` ${result}` }
+      { result }
     </div>
   );
 }

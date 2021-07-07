@@ -7,18 +7,22 @@ export default function calculate(dataObj, btnName) {
 
   switch (true) {
     case numbers.includes(btnName):
-      if (total === null || total === '0') {
+      if (total === null || total === 'Error') {
         total = btnName;
-      } else if (next === null) {
+      } else if (operation && next === null) {
         next = btnName;
+      } else if (operation && next) {
+        next += btnName;
+      } else if (total && operation === null) {
+        total += btnName;
       }
       break;
     case operations.includes(btnName):
-      operation = btnName;
       if (operation && next) {
         total = Operate(total, next, operation);
-        [next, operation] = null;
-      } else if (total && !next) {
+        next = null;
+        operation = btnName;
+      } else if (total) {
         operation = btnName;
       }
       break;
@@ -36,7 +40,11 @@ export default function calculate(dataObj, btnName) {
       }
       break;
     case btnName === '%':
-      next = Operate(total, next, btnName);
+      if (total && next === null) {
+        total = Operate(total, next, btnName);
+      } else if (next) {
+        next = Operate(total, next, btnName);
+      }
       break;
     case btnName === 'AC':
       [total, next, operation] = [null, null, null];
