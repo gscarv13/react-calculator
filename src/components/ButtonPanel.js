@@ -11,22 +11,20 @@ const GroupButtons = [
   ['0', '.', '='],
 ];
 
-function displayButtons(buttons, handler) {
-  return buttons.map((group, groupID) => (
-    <div key={`group${groupID}`}>
-      { group.map((btn, btnID) => <Button key={`btn${btnID}`} name={btn} clickHandler={handler} />) }
-    </div>
-  ));
-}
+const displayButtons = (buttons, handler) => buttons.map((group, groupID) => (
+  <div key={`group${groupID}`}>
+    { group.map((btn, btnID) => <Button key={`btn${btnID}`} name={btn} handleClick={handler} />) }
+  </div>
+));
 
-function ButtonPanel(props) {
-  const { clickHandler } = props;
+const ButtonPanel = (props) => {
+  const handleClick = (btnName) => props.clickHandler(btnName);
   return (
     <>
-      { displayButtons(GroupButtons, clickHandler) }
+      { displayButtons(GroupButtons, handleClick) }
     </>
   );
-}
+};
 
 ButtonPanel.propTypes = {
   clickHandler: PropTypes.func.isRequired,
