@@ -11,9 +11,9 @@ const GroupButtons = [
   ['0', '.', '='],
 ];
 
-const displayButtons = (buttons, handler) => buttons.map((group, groupID) => (
+const displayButtons = (buttons, handleClick) => buttons.map((group, groupID) => (
   <div key={`group${groupID}`}>
-    { group.map((btn, btnID) => <Button key={`btn${btnID}`} name={btn} handleClick={handler} />) }
+    { group.map((btn, btnID) => <Button key={`btn${btnID}`} name={btn} handleClick={handleClick} />) }
   </div>
 ));
 
