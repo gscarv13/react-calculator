@@ -16,7 +16,12 @@ export default function operate(numberOne, numberTwo, operation) {
       result = x.times(y);
       break;
     case '÷':
-      result = x.div(y);
+      if (y.valueOf() === '0') {
+        result = 'Error';
+      } else {
+        result = x.div(y);
+      }
+
       break;
     case '%':
       if (y.valueOf() === '0') {

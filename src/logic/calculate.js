@@ -7,7 +7,7 @@ export default function calculate(dataObj, btnName) {
 
   switch (true) {
     case numbers.includes(btnName):
-      if (total === null) {
+      if (total === null || total === 'Error') {
         total = btnName;
       } else if (operation && next === null) {
         next = btnName;
