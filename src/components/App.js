@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 import Calculate from '../logic/calculate';
+import Header from './Header';
 import '../styles/stylesheet.css';
 
 const App = () => {
@@ -19,12 +20,17 @@ const App = () => {
 
   const current = next || total || '0';
   return (
-    <div className="d-flex w-700 flex-column">
-      <>
-        <Display result={current} />
-        <ButtonPanel className="d-flex" clickHandler={handleClick} />
-      </>
-    </div>
+    <>
+      <Header />
+      <div className="right">
+        <div className="d-flex w-700 flex-column">
+          <>
+            <Display result={current} />
+            <ButtonPanel className="d-flex" clickHandler={handleClick} />
+          </>
+        </div>
+      </div>
+    </>
   );
 };
 
