@@ -24,7 +24,7 @@ const displayButtons = (buttons, handleClick) => buttons.map((group, groupID) =>
           key={`btn${btnID}`}
           name={btn}
           handleClick={handleClick}
-          color={(btnID < 3 && btn !== '=') ? '#dfdfdf' : '#ef8f47'}
+          color={(btnID < 3 && btn !== '=') ? '#303136' : '#1991ff'}
           wide={isWide}
         />
       );
@@ -35,7 +35,7 @@ const displayButtons = (buttons, handleClick) => buttons.map((group, groupID) =>
 const ButtonPanel = (props) => {
   const handleClick = (btnName) => props.clickHandler(btnName);
   return (
-    <div className="d-flex flex-column">
+    <div className="d-flex flex-column border">
       { displayButtons(GroupButtons, handleClick) }
     </div>
   );
