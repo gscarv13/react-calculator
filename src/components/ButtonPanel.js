@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from './Button';
+import '../styles/stylesheet.css';
 
 const GroupButtons = [
   ['AC', '+/-', '%', '÷'],
@@ -12,17 +13,31 @@ const GroupButtons = [
 ];
 
 const displayButtons = (buttons, handleClick) => buttons.map((group, groupID) => (
-  <div key={`group${groupID}`}>
-    { group.map((btn, btnID) => <Button key={`btn${btnID}`} name={btn} handleClick={handleClick} />) }
+  <div
+    key={`group${groupID}`}
+    className="row d-flex"
+  >
+    { group.map((btn, btnID) => {
+      const isWide = btn === '0';
+      return (
+        <Button
+          key={`btn${btnID}`}
+          name={btn}
+          handleClick={handleClick}
+          color={(btnID < 3 && btn !== '=') ? '#303136' : '#1991ff'}
+          wide={isWide}
+        />
+      );
+    })}
   </div>
 ));
 
 const ButtonPanel = (props) => {
   const handleClick = (btnName) => props.clickHandler(btnName);
   return (
-    <>
+    <div className="d-flex flex-column border">
       { displayButtons(GroupButtons, handleClick) }
-    </>
+    </div>
   );
 };
 
