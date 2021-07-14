@@ -1,8 +1,6 @@
 import '@testing-library/jest-dom';
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-// import userEvent from '@testing-library/user-event';
-// import Home from '../Home';
 import Router from '../Router';
 
 beforeEach(() => {
