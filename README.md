@@ -38,6 +38,16 @@ To run this project locally, make sure you have the following installed:
 - Open your browser
 - Enter `localhost:3000`
 
+### Tests
+
+To run the tests, open the terminal and enter the following command,
+
+```terminal
+npm run tests
+```
+
+Then follow the instructions provided
+
 ## Authors
 
 👤 **Gustavo Carvalho**
