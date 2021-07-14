@@ -5,7 +5,7 @@ import '../styles/stylesheet.css';
 function Display(props) {
   const { result } = props;
   return (
-    <div className="display">
+    <div className="display" data-testid="display">
       { result }
     </div>
   );

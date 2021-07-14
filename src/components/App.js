@@ -22,7 +22,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <div className="right">
+      <div className="right" data-testid="calculator">
         <div className="d-flex w-700 flex-column">
           <>
             <Display result={current} />

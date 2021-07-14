@@ -35,7 +35,7 @@ const displayButtons = (buttons, handleClick) => buttons.map((group, groupID) =>
 const ButtonPanel = (props) => {
   const handleClick = (btnName) => props.clickHandler(btnName);
   return (
-    <div className="d-flex flex-column border">
+    <div className="d-flex flex-column border" data-testid="button-panel">
       { displayButtons(GroupButtons, handleClick) }
     </div>
   );
