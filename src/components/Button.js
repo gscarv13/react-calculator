@@ -18,6 +18,7 @@ const Button = (props) => {
       onClick={() => handleClick(name)}
       className="btn"
       style={style}
+      data-testid={name}
     >
       { name }
     </button>
